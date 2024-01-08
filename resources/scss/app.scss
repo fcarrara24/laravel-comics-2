@@ -1,0 +1,52 @@
+@use './partials/variables' as *;
+
+$fa-font-path: "../webfonts" !default;
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import '~bootstrap/scss/bootstrap';
+
+h1 {
+    color: $text-color;
+}
+
+header{
+    background-color: white;
+}
+
+.main-bg{
+    background-color: black;
+    margin-top: 40vh;
+}
+
+.index-bg{
+    position: relative;
+    z-index: 200!important;
+    background-color: white;
+    margin-top: 40vh;
+}
+
+.my-series{
+    position: absolute;
+    bottom: 98%;
+    left: 0%;
+    width: max-content;
+}
+
+.elemento-fascia{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2;
+    align-items: center;
+}
+
+.bg-special{
+    background-image: url('../img/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
