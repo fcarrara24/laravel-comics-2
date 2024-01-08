@@ -40,6 +40,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+
         $formData = $request->all();
         $newComic = new Comic();
         $newComic->title = $formData['title'];
@@ -47,8 +48,8 @@ class ComicController extends Controller
         $newComic->description = $formData['description'];
         $newComic->type = $formData['type'];
 
-        $newComic->sale_date = '2020-07-01';
-        $newComic->series = '2020-07-01';
+        $newComic->sale_date = $formData['sale_date'];
+        $newComic->series = $formData['series'];
         $newComic->save();
         return to_route('comics.index');
     }

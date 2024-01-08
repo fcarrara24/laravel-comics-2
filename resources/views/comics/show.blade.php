@@ -1,13 +1,13 @@
 
 @extends('layouts.app')
-@section('jumbotron')
-    @include('partials.jumbotron')
-@endsection
 
 @section('mainContent')
     @include('partials.singleComic')
 @endsection
 
-
+@section('footer')
+    @include('partials.bottom')
+    @include('partials.footer')
+@endsection
 
 
