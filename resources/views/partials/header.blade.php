@@ -23,5 +23,9 @@
             </div>
 
         </div>
+        <!-- adding the link to the create -->
+        <div class="d-flex flex-row justify-content-center align-items-center plus">
+            <h1><a style="text-decoration: none; color: red;" href="{{ route('comics.create') }}">+</a></h1>
+        </div>
     </div>
 </div>

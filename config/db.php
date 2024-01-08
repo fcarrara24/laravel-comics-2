@@ -1,5 +1,6 @@
 <?php
 
+//here i've divided the part with the database that will be charged in a sql server
 return [
     'comics' => [
         [

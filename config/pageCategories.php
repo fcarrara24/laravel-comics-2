@@ -1,4 +1,5 @@
 <?php
+// le informazioni stati che che però sono comode da inserire in yb database
 return [
     'header' => [
         [

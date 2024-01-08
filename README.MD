@@ -118,3 +118,6 @@ Iniziate a definire le prime operazioni CRUD con le relative view dove necessari
 Bonus:
 Procedere con il salvataggio dei dati sul db
 Buon pomeriggio e buon lavoro !!!
+
+personal step 
+"reimplemented all section of the page that were previously held in the same database, in 2 different database (the first based on mamp, the second being pageCategories, static and accessed using config(pageCategoriws.section)"
