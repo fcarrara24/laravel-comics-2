@@ -77,12 +77,12 @@
 
                     <div class="d-flex flex-row p-2" style="border-bottom: 1px solid #e3e3e3;">
                         <div class="w-25">U.S. price:</div>
-                        <div class="w-75 ">${{ $comic['price'] }}</div>
+                        <div class="w-75 ">{{ $comic['price'] }}</div>
                     </div>
 
                     <div class="d-flex flex-row p-2" style="border-bottom: 1px solid #e3e3e3;">
                         <div class="w-25">On Sale Date:</div>
-                        <div class="w-75 ">${{ $comic['sale_date'] }}</div>
+                        <div class="w-75 ">{{ $comic['sale_date'] }}</div>
                     </div>
                 </div>
             </div>

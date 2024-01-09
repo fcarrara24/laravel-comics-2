@@ -1,5 +1,12 @@
 <div class=" main-bg position-relative ">
 
+    @if (session('success'))
+        <div class="alert alert-success ">
+            {{ session('message') }}
+        </div>
+    @endif
+
+
     <div class="container pt-5 position-relative ">
         <div class="my-series bg-primary text-white px-5 py-1">
             <h3>CURRENT SERIES</h1>
@@ -11,8 +18,13 @@
 
                     <a href="{{ route('comics.show', $comic->id) }}">
                         <div class="img-container  overflow-hidden " style="max-width: 100%; max-height: 60%; ">
-                            <img src="{{ $comic->thumb }}" alt="$comic->title" srcset=""
-                                style="max-width: 100%; width: 100%; max-height: 100%">
+                            {{-- handling comics without image --}}
+                            @if (!file_exists(public_path($comic->thumb)))
+                                <img src="{{ $comic->thumb }}" alt="$comic->title" srcset=""
+                                    style="max-width: 100%; width: 100%; max-height: 100%">
+                            @else
+                                <img src="https://picsum.photos/300/400" class="w-100" alt="">
+                            @endif
                         </div>
                         <div class=" text-white pb-3">{{ $comic->series }}</div>
 
