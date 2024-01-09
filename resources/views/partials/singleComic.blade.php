@@ -1,4 +1,5 @@
 <div>
+
     <div class="index-bg">
 
         <div class="w-100" style="background-color: #0282f9; min-height: 70px"></div>

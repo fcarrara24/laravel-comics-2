@@ -82,6 +82,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // aggiorno la componente per poi andare a mostrare le
+        // specifiche della componente aggiornata nella pagina
+        // show singola
         $formData = $request->all();
 
         $comic->fill($formData);
@@ -97,6 +100,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('comics.index')->with('message', "il fumetto $comic->title è stato eliminato");
     }
 }

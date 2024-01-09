@@ -15,23 +15,38 @@
                                 style="max-width: 100%; width: 100%; max-height: 100%">
                         </div>
                         <div class=" text-white pb-3">{{ $comic->series }}</div>
-                        <div class="btn btn-primary">
+
                     </a>
+                    <div class="d-flex flex-row gap-2">
 
 
 
-                    <a href="{{ route('comics.edit', $comic) }}" class="text-white text-decoration-none ">
-                        <i class="fa-solid fa-wrench"></i>
-                    </a>
+                        <button class="btn btn-success ">
+                            <a href="{{ route('comics.edit', $comic) }}" class="text-white text-decoration-none ">
+                                <i class="fa-solid fa-wrench"></i>
+                            </a>
+                        </button>
 
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">
+                                <a href="" class="text-white text-decoration-none ">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </button>
+
+                        </form>
+
+
+                    </div>
                 </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
 
-</div>
-<div class="d-flex flex-row justify-content-center py-3">
-    <div class="  bg-primary text-white px-5 py-1"> LOAD MORE </div>
-</div>
+    </div>
+    <div class="d-flex flex-row justify-content-center py-3">
+        <div class="  bg-primary text-white px-5 py-1"> LOAD MORE </div>
+    </div>
 
 </div>
