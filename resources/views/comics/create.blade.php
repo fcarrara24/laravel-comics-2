@@ -7,16 +7,29 @@
     <section id="comic_info" class="container">
         <form action="{{ route('comics.store') }}" method="POST" class="d-flex flex-column flex-grow-1 gap-1">
             @csrf
-
+            <label for="title">Titolo</label>
             <input type="text" name="title" id="title" placeholder="inserisci titolo"
                 class="form-control text-center ">
+
+            <label for="price">prezzo</label>
             <input type="text" name="price" id="price" placeholder="price" class="form-control text-center">
-            <input type="text" name="description" id="description" placeholder="description"
-                class="form-control text-center">
+
+            <label for="description">descrizione</label>
+            <textarea type="text" name="description" id="description" placeholder="description"
+                class="form-control text-center"></textarea>
+
+            <label for="type">tipo</label>
             <input type="text" name="type" id="type" placeholder="type" class="form-control text-center">
+
+            <label for="sale_date">prezzo</label>
             <input type="text" name="sale_date" id="sale_date" placeholder="sale_date"
                 class="form-control text-center">
+
+            <label for="series">serie</label>
             <input type="text" name="series" id="series" placeholder="series" class="form-control text-center">
+
+            <label for="thumbnail">link immagine</label>
+            <input type="text" name="thumbnail" id="thumbnail" placeholder="thumbnail" class="form-control text-center">
 
             <button type="submit" class="btn btn-primary">invia</button>
         </form>

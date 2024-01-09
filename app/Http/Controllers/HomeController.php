@@ -7,7 +7,7 @@ use App\Models\Comic;
 
 class HomeController extends Controller
 {
-    //stampa 5 fumetti presi randomicamente dall'array
+    //stampa 4 fumetti presi randomicamente dall'array
     public function index()
     {
         $comics = Comic::inRandomOrder()
