@@ -42,14 +42,11 @@ class ComicController extends Controller
         //dd($request->all());
 
         $formData = $request->all();
-        $newComic = new Comic();
-        $newComic->title = $formData['title'];
-        $newComic->price = $formData['price'];
-        $newComic->description = $formData['description'];
-        $newComic->type = $formData['type'];
 
-        $newComic->sale_date = $formData['sale_date'];
-        $newComic->series = $formData['series'];
+        $newComic = new Comic();
+        //added this fill method that works via fillable
+        $newComic->fill($formData);
+
         $newComic->save();
         return to_route('comics.index');
     }
