@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ComicController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,28 +16,14 @@ use App\Http\Controllers\ComicController;
 |
 */
 
+//old main routes
+
 // Route::get('/', function () {
-//     $database = config('db');
-//     return view('home', compact('database'));
+//     return Redirect::route('comics.index');
 // })->name('comics.index');
 
-Route::get('/', function () {
-    return Redirect::route('comics.index');
-})->name('comics.index');
-
-// Route::get('/comics/{id}', function ($id) {
-//     $db = config('db');
-//     //dd($db);
-//     if ($id >= 0 && $id < count($db['comics'])) {
-//         $comic = $db['comics'][$id];
-//         return view('comics.show')
-//             ->with('comic', $comic)
-//             ->with('database', $db);
-//     } else {
-//         //indica direttamente la pagina che non è stata trovata
-//         abort(404);
-//     }
-// })->name('comics.show');
+//new main route
+Route::get('/', [HomeController::class, 'index']);
 
 //creazione di una route completa per il controller di laravel
 Route::resource('comics', ComicController::class);
