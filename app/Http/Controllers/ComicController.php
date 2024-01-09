@@ -95,6 +95,14 @@ class ComicController extends Controller
         // aggiorno la componente per poi andare a mostrare le
         // specifiche della componente aggiornata nella pagina
         // show singola
+        $request->validate([
+            'title' => 'required|min:5|max:255',
+            'series' => 'required|min:5|max:255',
+            'sale_date' => 'required|date|date_format:Y-m-d',
+            'price' => 'required|min:3|max:20',
+            'type' => 'required|min:3|max:255',
+        ]);
+
         $formData = $request->all();
 
         $comic->fill($formData);

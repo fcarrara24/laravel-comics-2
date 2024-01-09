@@ -1,9 +1,7 @@
 <div class=" main-bg position-relative ">
 
-    @if (session('success'))
-        <div class="alert alert-success ">
-            {{ session('message') }}
-        </div>
+    @if (session()->has('message'))
+        <div class="alert alert-success">{{ session()->get('message') }}</div>
     @endif
 
 
