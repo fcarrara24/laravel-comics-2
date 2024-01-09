@@ -1,9 +1,31 @@
+@php
+    $footer = [
+        [
+            'title' => 'DC COMICS',
+            'link' => ['Character', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News'],
+        ],
+        [
+            'title' => 'SHOP',
+            'link' => ['Shop DC', 'shop DC Collectibles'],
+        ],
+        [
+            'title' => 'DC',
+            'link' => ['Character', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News'],
+        ],
+        [
+            'title' => 'SITES',
+            'link' => ['Character', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News'],
+        ],
+    ];
+@endphp
+
+
 <div class="bg-special text-white">
     <div class="container d-flex flex-row align-items-center">
         <div class="left-part w-50 py-3 pe-5">
             <div class= "d-flex flex-row justify-content-between mb-5">
                 {{-- getting data from a config file --}}
-                @foreach (config('pageCategories.footer-categories') as $category)
+                @foreach ($footer as $category)
                     <div class="d-flex flex-column">
                         <h3>{{ $category['title'] }}</h2>
                             <div class="d-flex flex-column " style="color: grey">

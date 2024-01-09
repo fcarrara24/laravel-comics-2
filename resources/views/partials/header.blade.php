@@ -1,3 +1,44 @@
+@php
+    $header = [
+        [
+            'id' => 0,
+            'title' => 'CHARACTERS',
+        ],
+        [
+            'id' => 1,
+            'title' => 'MOVIES',
+        ],
+        [
+            'id' => 2,
+            'title' => 'TV',
+        ],
+        [
+            'id' => 3,
+            'title' => 'GAMES',
+        ],
+        [
+            'id' => 4,
+            'title' => 'COLLECTIBLES',
+        ],
+        [
+            'id' => 5,
+            'title' => 'VIDEOS',
+        ],
+        [
+            'id' => 6,
+            'title' => 'FANS',
+        ],
+        [
+            'id' => 7,
+            'title' => 'NEWS',
+        ],
+        [
+            'id' => 8,
+            'title' => 'SHOP',
+        ],
+    ];
+@endphp
+
 <div id="containerHeader">
     <div class=" d-flex flex-row justify-content-evenly container py-2 ">
         <div class="subcontainer-header d-flex flex-row justify-content-start align-items-center w-max-content">
@@ -5,7 +46,7 @@
                     alt="jumbotron"></a>
         </div>
         <div class="d-flex flex-row justify-content-between gap-5 ">
-            @foreach (config('pageCategories.header') as $category)
+            @foreach ($header as $category)
                 <div class=" d-flex flex-column justify-content-between ">
                     <div></div>
                     <div>{{ $category['title'] }}</div>
