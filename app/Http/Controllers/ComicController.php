@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -16,6 +18,7 @@ class ComicController extends Controller
     public function index()
     {
         //
+
         $comics = Comic::all();
         return view('comics.index', compact('comics'));
     }
@@ -34,30 +37,17 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
         //dd($request->all());
 
         //adding validations
 
-        $request->validate([
-            'title' => 'required|min:5|max:255|unique:comics',
-            'series' => 'required|min:5|max:255',
-            'sale_date' => 'required|date|date_format:Y-m-d',
-            'price' => 'required|min:3|max:20',
-            'type' => 'required|min:3|max:255',
-        ]);
-
-        $formData = $request->all();
-
-        $newComic = new Comic();
+        $formData = $request->validated();
         //added this fill method that works via fillable
-        $newComic->fill($formData);
+        $newComic = Comic::create($formData);
 
-        $newComic->save();
         return to_route('comics.index');
     }
 
@@ -65,7 +55,7 @@ class ComicController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+     *
      */
     public function show(Comic $comic)
     {
@@ -76,7 +66,7 @@ class ComicController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+     *
      */
     public function edit(Comic $comic)
     {
@@ -88,22 +78,15 @@ class ComicController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+     *
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
         // aggiorno la componente per poi andare a mostrare le
         // specifiche della componente aggiornata nella pagina
         // show singola
-        $request->validate([
-            'title' => 'required|min:5|max:255',
-            'series' => 'required|min:5|max:255',
-            'sale_date' => 'required|date|date_format:Y-m-d',
-            'price' => 'required|min:3|max:20',
-            'type' => 'required|min:3|max:255',
-        ]);
 
-        $formData = $request->all();
+        $formData = $request->validated();
 
         $comic->fill($formData);
         $comic->update();
@@ -114,7 +97,7 @@ class ComicController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+     *
      */
     public function destroy(Comic $comic)
     {
