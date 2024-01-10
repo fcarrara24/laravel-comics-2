@@ -3,6 +3,7 @@
 
 @section('mainContent')
     @include('partials.singleComic')
+
 @endsection
 
 @section('footer')

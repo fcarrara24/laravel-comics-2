@@ -31,11 +31,17 @@ header{
 
 .my-series{
     position: absolute;
-    bottom: 98%;
+    bottom: 100%;
     left: 0%;
     width: max-content;
 }
 
+.my-search{
+    position: absolute;
+    bottom: 100%;
+    right: 0%;
+    width: fit-content;
+}
 .elemento-fascia{
     width: 100%;
     display: flex;

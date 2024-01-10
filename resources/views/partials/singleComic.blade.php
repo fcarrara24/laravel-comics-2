@@ -2,6 +2,8 @@
     <div class="alert alert-success">{{ session()->get('message') }}</div>
 @endif
 
+
+
 <div>
 
     <div class="index-bg">
@@ -32,6 +34,14 @@
                         <span class="w-75">
                             {{ $comic->description }}
                         </span>
+
+
+                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="cancel-button btn btn-danger"
+                                data-item-title="{{ $comic->title }}"><i class="fa-solid fa-trash"></i></button>
+                        </form>
                     </div>
 
                     <div class="left-part w-25 ">
@@ -128,3 +138,6 @@
 
 
 </div>
+
+
+@include('partials.modal_delete')

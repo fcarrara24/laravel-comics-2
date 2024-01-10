@@ -15,18 +15,28 @@ class ComicController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request): View
     {
-        //
+        //controllo se sto cercando un dato
+        if(!empty($request->query('search'))){
+            //prendere i valori
+            $search = $request->query('search');
+            $comics = Comic::where('title', 'like', '%'.$search.'%')->get();
 
-        $comics = Comic::all();
+        } else {
+
+            $comics = Comic::all();
+        }
+
+
+
         return view('comics.index', compact('comics'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function create()
     {

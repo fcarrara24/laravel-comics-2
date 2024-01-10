@@ -131,5 +131,5 @@ Aggiungere validazioni e messaggi di errore e alla cancellazione messaggio di co
 sempre lavorando sulla repo di ieri, potete aggiungere le validazioni in modo da rendere più stabile il vostro gestionale di fumetti. Validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano.
 Bonus:
 utilizzare le Request personalizzate per validare i dati
-aggiungere conferma alla cancellazione degli elementi
 aggiungere un filtro a vostra scelta per i dati dei comics
+aggiungere conferma alla cancellazione degli elementi

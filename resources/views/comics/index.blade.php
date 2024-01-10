@@ -1,4 +1,5 @@
 @extends('layouts.app')
+{{-- checkning if addition executed correctly --}}
 
 
 @section('mainContent')

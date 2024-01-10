@@ -7,7 +7,15 @@
 
     <div class="container pt-5 position-relative ">
         <div class="my-series bg-primary text-white px-5 py-1">
-            <h3>CURRENT SERIES</h1>
+            <h3>CURRENT SERIES</h3>
+        </div>
+
+        <div class="my-search bg-primary text-white px-5 py-1">
+            <h3> CERCA</h3>
+            <form action="{{ route('comics.index') }}" method="GET">
+                <input type="text" name="search" id="search" value="" placeholder="cerca" class="text">
+                <button type="submit" class="btn btn-success ">invia</button>
+            </form>
         </div>
         <div class="row ">
             @foreach ($comics as $comic)
@@ -37,16 +45,7 @@
                             </a>
                         </button>
 
-                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger">
-                                <a href="" class="text-white text-decoration-none ">
-                                    <i class="fa-solid fa-trash"></i>
-                                </a>
-                            </button>
 
-                        </form>
 
 
                     </div>
