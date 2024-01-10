@@ -10,13 +10,7 @@
             <h3>CURRENT SERIES</h3>
         </div>
 
-        <div class="my-search bg-primary text-white px-5 py-1">
-            <h3> CERCA</h3>
-            <form action="{{ route('comics.index') }}" method="GET">
-                <input type="text" name="search" id="search" value="" placeholder="cerca" class="text">
-                <button type="submit" class="btn btn-success ">invia</button>
-            </form>
-        </div>
+
         <div class="row ">
             @foreach ($comics as $comic)
                 <div class="w-25" style=" max-height: 60%;">

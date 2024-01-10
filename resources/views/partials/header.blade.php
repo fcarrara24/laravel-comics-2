@@ -28,14 +28,6 @@
             'id' => 6,
             'title' => 'FANS',
         ],
-        [
-            'id' => 7,
-            'title' => 'NEWS',
-        ],
-        [
-            'id' => 8,
-            'title' => 'SHOP',
-        ],
     ];
 @endphp
 
@@ -56,13 +48,17 @@
             @endforeach
         </div>
         <div class="d-flex flex-column justify-content-center align-items-end ">
-            <div class="d-flex flex-row justify-content-end align-content-center">
+            {{-- <div class="d-flex flex-row justify-content-end align-content-center">
                 <span>
                     Search <i class="fa-solid fa-search"></i>
                 </span>
 
-            </div>
-
+            </div> --}}
+            <form action="{{ route('comics.index') }}" method="GET" class="d-flex felx-row flex-nowrap">
+                <input type="text" name="search" id="search" value="" placeholder="cerca" class="text "
+                    style="border-color: transparent; width: 100px; max-width: fit-content; text-align: center;">
+                <button type="submit" class="btn btn-success pe-2"><i class="fa-solid fa-search"></i></button>
+            </form>
         </div>
         <!-- adding the link to the create -->
         <div class="d-flex flex-row justify-content-center align-items-center plus">
